@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 05</title>
+</head>
+
+<body>
+    <button onclick="sortear()">Jogar</button>
+    <div id="dMsg"></div>
+
+
+
+</body>
+
+</html>
+
+<script>
+
+    let placar1 = 0
+    let placar2 = 0
+
+    function sortear() {
+        let p1 = Math.random();
+        let min = 1;
+        let max = 3;
+        let intervalo = max - min
+        let ganhador = '';
+        let msg = '';
+        p1 *= intervalo
+        p1 += min
+
+        p1 = p1.toFixed(0);
+
+        let p2 = Math.random();
+        p2 *= intervalo
+        p2 += min
+
+
+        p2 = p2.toFixed(0);
+
+        if (p1 == 1) {
+            p1 = 'pedra'
+            msg += `Jogador 1: <img style="width: 150px;height: 150px;" src="https://img.freepik.com/psd-gratuitas/rocha-cinzenta-isolada-em-fundo-transparente_632498-25568.jpg?semt=ais_hybrid&w=740&q=80" alt="">`
+        } else if (p1 == 2) {
+            p1 = 'papel'
+            msg += `Jogador 1: <img style="width: 150px;height: 150px;" src="https://img.freepik.com/vetores-gratis/folha-de-papel-branca-vazia-com-ondulacao_1284-43065.jpg" alt="">`
+        }
+        else {
+            p1 = 'tesoura'
+            msg += `Jogador 1: <img style="width: 150px;height: 150px;" src="https://www.pontoxtecidos.com.br/static/567/sku/produtos-tecidos-circulo-tesouras-tesoura-confort-preto-21-5-cm--p-1566573858384.jpg" alt="">`
+        }
+
+        if (p2 == 1) {
+            p2 = 'pedra'
+            msg += `Jogador 2: <img style="width: 150px;height: 150px;" src="https://img.freepik.com/psd-gratuitas/rocha-cinzenta-isolada-em-fundo-transparente_632498-25568.jpg?semt=ais_hybrid&w=740&q=80" alt="">`
+        } else if (p2 == 2) {
+            p2 = 'papel'
+            msg += `Jogador 2: <img style="width: 150px;height: 150px;" src="https://img.freepik.com/vetores-gratis/folha-de-papel-branca-vazia-com-ondulacao_1284-43065.jpg" alt="">`
+        }
+        else {
+            p2 = 'tesoura'
+            msg += `Jogador 2: <img style="width: 150px;height: 150px;" src="https://www.pontoxtecidos.com.br/static/567/sku/produtos-tecidos-circulo-tesouras-tesoura-confort-preto-21-5-cm--p-1566573858384.jpg" alt="">`
+        }
+
+        if (p1 == "pedra" && p2 == "tesoura" ||
+            p1 == "papel" && p2 == "pedra" ||
+            p1 == "tesoura" && p2 == "papel"
+        ) {
+            ganhador = 'jogador 1'
+
+            placar1++
+        }
+        else if (p2 == "pedra" && p1 == "tesoura" ||
+            p2 == "papel" && p1 == "pedra" ||
+            p2 == "tesoura" && p1 == "papel"
+        ) {
+            ganhador = 'jogador 2'
+            placar2++
+        } else {
+            ganhador = 'Empate'
+        }
+
+        dMsg.innerHTML = msg
+        dMsg.innerHTML += `<br>O ${ganhador} venceu!<br>
+     Jogador 1: ${placar1} vitória(s)<br> 
+     Jogador 2: ${placar2} vitória(s) `
+
+
+
+
+
+
+
+
+    }
+</script>

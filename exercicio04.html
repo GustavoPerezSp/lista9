@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 04</title>
+</head>
+<body>
+    <button onclick="sortear()">Sortear Nota para aluno</button>
+    <div id="dMsg"></div>
+
+    
+
+    
+</body>
+</html>
+
+<script>
+    function sortear(){
+        let sorteado = Math.random();
+        let min = 0;
+        let max = 10;
+        let intervalo = max - min
+        sorteado *= intervalo
+        sorteado += min
+
+        sorteado = sorteado.toFixed(1);
+
+        dMsg.innerHTML = `${sorteado}`
+
+    }
+</script>

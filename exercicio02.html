@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 02</title>
+</head>
+<body>
+    <button onclick="sortear()">Sortear time</button>
+    <div id="dMsg"></div>
+
+    
+</body>
+</html>
+
+<script>
+    function sortear(){
+        let sorteado = Math.random();
+        let min = 1;
+        let max = 4;
+        let intervalo = max - min
+        sorteado *= intervalo
+        sorteado += min
+
+        sorteado = sorteado.toFixed(0);
+
+        if(sorteado == 1){
+            dMsg.innerHTML = `<img style="height: 150px; width: 150px;" src="https://yt3.googleusercontent.com/HxdDIohuLXL7E2JpK97Xm1d_P4Qosm2SwnZzDWrelcBSctGglF2UPaT215JkoxSi3o1-aUgieNk=s900-c-k-c0x00ffffff-no-rj" alt="">`
+        }else if(sorteado == 2){
+            dMsg.innerHTML = `<img style="height: 150px; width: 150px;" 
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/SE_Palmeiras_2025_crest.png/250px-SE_Palmeiras_2025_crest.png" 
+            alt="">`
+        }else if(sorteado == 3){
+            dMsg.innerHTML = `<img style="height: 150px; width: 150px;" 
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4deSrFwIG2r25eJWsz-EurQlPbd1Rpqa7fA&s" 
+            alt="">`
+        }else{
+            dMsg.innerHTML = `<img style="height: 150px; width: 150px;" 
+            src="https://crfb.museudofutebol.org/anexos/imagem/478479/w:640/h:640/c:0" 
+            alt="">`
+        }
+    }
+</script>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 01</title>
+</head>
+<body>
+    <button onclick="sortear()">Sortear</button>
+    <div id="dMsg"></div>
+</body>
+</html>
+
+<script>
+    function sortear(){
+        let sorteado = Math.random();
+        let msg = sorteado;
+
+        if(sorteado <= 0.5){
+            msg += ` ; Eu arredondaria para 0`
+        }else{
+            msg += ` ; Eu arredondaria para 1`
+        }
+
+        dMsg.innerHTML = msg
+    }
+</script>
